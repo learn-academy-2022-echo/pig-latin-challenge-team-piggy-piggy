@@ -11,7 +11,7 @@ const App = () => {
   // ACTION ITEM: the "myPigLatinCodeHere" function is where you will put your logic to translate the sentence entered by the user into Pig Latin
   const myPigLatinCodeHere = () => {
 
-    
+
     // NO MODIFICATION NEEDED: the variable "arrayOfUserInput" will contain the text input from the user split into an array of words
     const arrayOfUserInput = userInput.split(" ")
     console.log("arrayOfUserInput:", arrayOfUserInput)
@@ -23,10 +23,10 @@ const App = () => {
       // NO MODIFICATION NEEDED: this code will look at each word and identify the vowels
       const vowelsArray = eachWord.split("").filter(vowel => {
         return (
-          vowel === "a" || 
-          vowel === "e" || 
-          vowel === "i" || 
-          vowel === "o" || 
+          vowel === "a" ||
+          vowel === "e" ||
+          vowel === "i" ||
+          vowel === "o" ||
           vowel === "u"
         )
       })
@@ -40,12 +40,30 @@ const App = () => {
             //check if the character at [0], is a vowel using the .include() method.
             //concatenate "way" to the word using "+".
             //const myPigLatinCodeHere = () => {
-            
+
             const vowels = ["a","e","i","o","u"]
             if(vowels.includes(eachWord[0])){
-              console.log(eachWord + "way");  
+              eachWord = eachWord + "way";
             }
-    
+
+        //Pseudo code:
+            // create a conditional statement to see if the word contains "qu"
+            // move all consonants and "u" to end and add "ay"
+              // use indexOf
+            // remove the first syllable up to "qu" from each word
+            // use concatenation to add "ay"
+            // if a word starts with multiple consonants
+
+              if (eachWord[0] === "q"){
+                  var firstCons = eachWord.slice(0, 2);
+                  var middle = eachWord.slice(2, eachWord.length);
+                  eachWord = middle+firstCons+"ay";
+               } else if (eachWord[1] === "q"){
+                var firstCons = eachWord.slice(0, 3);
+                var middle = eachWord.slice(3, eachWord.length);
+                eachWord = middle+firstCons+"ay";
+             }
+
 
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
