@@ -46,25 +46,41 @@ const App = () => {
               eachWord = eachWord + "way";
             }
 
-        //Pseudo code:
-            // create a conditional statement to see if the word contains "qu"
-            // move all consonants and "u" to end and add "ay"
-              // use indexOf
-            // remove the first syllable up to "qu" from each word
-            // use concatenation to add "ay"
-            // if a word starts with multiple consonants
 
-              if (eachWord[0] === "q"){
-                  var firstCons = eachWord.slice(0, 2);
-                  var middle = eachWord.slice(2, eachWord.length);
-                  eachWord = middle+firstCons+"ay";
-               } else if (eachWord[1] === "q"){
-                var firstCons = eachWord.slice(0, 3);
-                var middle = eachWord.slice(3, eachWord.length);
+              //Pseudo code:
+                  // create a conditional statement to see if the word contains "qu"
+                  // move all consonants and "u" to end and add "ay"
+                    // use indexOf
+                  // remove the first syllable up to "qu" from each word
+                  // use concatenation to add "ay"
+                  // if a word starts with multiple consonants
+
+              else if (eachWord[0] === "q"){
+                let firstCons = eachWord.slice(0, 2);
+                let middle = eachWord.slice(2, eachWord.length);
                 eachWord = middle+firstCons+"ay";
-             }
+            } else if (eachWord[1] === "q"){
+                let firstCons = eachWord.slice(0, 3);
+                let middle = eachWord.slice(3, eachWord.length);
+                eachWord = middle+firstCons+"ay";
+            }
 
 
+                // Pseudo code:
+                    // create a conditional statement
+                    // condition: eachWord does not equal vowels AND equals to y
+                    // slice eachWord from the beginning to y, add the slice to the end with "ay"
+
+              else if (eachWord.includes("y") && !eachWord.includes(vowels)) {
+                const indexY = eachWord.indexOf("y")
+                let firstCons = eachWord.slice(0, indexY);
+                let middle = eachWord.slice(indexY, eachWord.length);
+                eachWord = middle+firstCons+"ay";
+              }
+
+
+
+              
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
     })
